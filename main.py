@@ -6,23 +6,24 @@ import database_models
 from database import SessionLocal, engine
 from models import Product, ProductCreate
 
+from fastapi.middleware.cors import CORSMiddleware
+
 # Create DB tables
 database_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# CORS (for React)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://tracify-pro.vercel.app"
+        "https://tracify-pro-fastapi.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # Dependency to get DB session
 def get_db():
