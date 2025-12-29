@@ -1,84 +1,169 @@
 
-# Telusko Trac - Product Inventory Management
 
-A comprehensive product inventory management system built with FastAPI backend and React frontend, providing seamless tracking and management of product inventory.
+# 🚀 Tracify Pro – Inventory Management System
 
-## Features
+**Tracify Pro** is a full-stack inventory management web application that helps businesses track products, manage stock, and analyze inventory efficiently.
+The project is built with modern technologies and deployed using industry-standard cloud platforms.
 
-- **GET /**: Welcome endpoint
-- **GET /products/**: Get all products
-- **GET /products/{product_id}**: Get a specific product by ID
-- **POST /products/**: Create a new product
+---
 
-## Setup
+## 🌐 Live Demo
 
-1. **Create and activate virtual environment:**
-   ```bash
-   python -m venv myenv
-   myenv\Scripts\activate.ps1  # Windows PowerShell
-   ```
+* **Frontend (Vercel)**:
+  👉 [https://tracify-pro-fastapi.vercel.app](https://tracify-pro-fastapi.vercel.app)
 
-2. **Install dependencies:**
-   ```bash
-   pip install fastapi uvicorn
-   ```
+* **Backend API (Render)**:
+  👉 [https://tracifypro-fastapi-uyy1.onrender.com](https://tracifypro-fastapi-uyy1.onrender.com)
 
-3. **Run the application:**
-   ```bash
-   uvicorn main:app --reload
-   ```
+* **API Documentation (Swagger UI)**:
+  👉 [https://tracifypro-fastapi-uyy1.onrender.com/docs](https://tracifypro-fastapi-uyy1.onrender.com/docs)
 
-4. **Access the API:**
-   - API: http://localhost:8000
-   - Interactive docs: http://localhost:8000/docs
-   - ReDoc: http://localhost:8000/redoc
+---
 
-## Project Structure
+## ✨ Features
+
+* 📦 Add, update, delete, and view products
+* 🔍 Search products by ID, name, or description
+* 🔃 Sorting by ID, name, price, and quantity
+* 📊 Analytics dashboard for inventory insights
+* 📥 Export product data as CSV
+* 🔄 Undo delete functionality
+* 🌐 Fully deployed (frontend + backend + database)
+* ⚡ Fast and responsive UI
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* **React.js**
+* **Axios**
+* **CSS (Custom UI styling)**
+* **Vercel** (Deployment)
+
+### Backend
+
+* **FastAPI**
+* **Python**
+* **SQLAlchemy**
+* **Uvicorn**
+* **Render** (Deployment)
+
+### Database
+
+* **PostgreSQL**
+* **Neon** (Serverless PostgreSQL)
+
+---
+
+## 🏗️ System Architecture
 
 ```
-stocksphere/
-├── main.py          # FastAPI application with endpoints
-├── models.py        # Pydantic models
-├── .gitignore       # Git ignore file
-└── README.md        # This file
+Frontend (React + Vercel)
+        ↓
+Backend API (FastAPI + Render)
+        ↓
+Database (PostgreSQL + Neon)
 ```
 
-## API Usage Examples
+---
 
-### Get all products
+## 📂 Project Structure
+
+```
+TracifyPRO-fastapi/
+│
+├── frontend/          # React frontend
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── main.py            # FastAPI entry point
+├── database.py        # Database connection
+├── database_models.py # SQLAlchemy models
+├── models.py          # Pydantic schemas
+├── requirements.txt   # Backend dependencies
+└── README.md
+```
+
+---
+
+## ⚙️ API Endpoints
+
+| Method | Endpoint         | Description       |
+| ------ | ---------------- | ----------------- |
+| GET    | `/products/`     | Get all products  |
+| GET    | `/products/{id}` | Get product by ID |
+| POST   | `/products/`     | Add a new product |
+| PUT    | `/products/{id}` | Update product    |
+| DELETE | `/products/{id}` | Delete product    |
+
+---
+
+## 🚀 Local Setup (Optional)
+
+### Backend
+
 ```bash
-curl http://localhost:8000/products/
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn main:app --reload
 ```
 
-### Get product by ID
+### Frontend
+
 ```bash
-curl http://localhost:8000/products/1
+cd frontend
+npm install
+npm start
 ```
 
-### Create a new product
-```bash
-curl -X POST "http://localhost:8000/products/" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "id": 5,
-       "name": "Monitor",
-       "description": "4K monitor",
-       "price": 299.99,
-       "quantity": 15
-     }'
+---
+
+## 🔐 Environment Variables
+
+Backend requires the following environment variable:
+
+```
+DATABASE_URL=<Neon PostgreSQL connection string>
 ```
 
-## Models
+---
 
-### Product
-- `id`: integer
-- `name`: string
-- `description`: string
-- `price`: float
-- `quantity`: integer
+## 📌 Deployment
 
-## Built With
+* **Frontend** deployed using **Vercel**
+* **Backend** deployed using **Render**
+* **Database** hosted on **Neon PostgreSQL**
+* CORS configured for secure frontend–backend communication
 
-- [FastAPI](https://fastapi.tiangolo.com/) - Modern, fast web framework for building APIs
-- [Pydantic](https://pydantic-docs.helpmanual.io/) - Data validation using Python type hints
-- [Uvicorn](https://www.uvicorn.org/) - ASGI server implementation
+---
+
+## 🎯 Learning Outcomes
+
+* Full-stack application development
+* REST API design using FastAPI
+* PostgreSQL database integration
+* Cloud deployment and environment configuration
+* Handling CORS and production issues
+* Real-world debugging and deployment workflow
+
+---
+
+## 👩‍💻 Author
+
+**Jayasakthi AV**
+Computer Science & Business Systems (CSBS)
+
+---
+
+## ⭐ Acknowledgements
+
+This project was built as a hands-on learning experience to understand real-world full-stack application development and deployment.
+
+---
+
+### 🎉 If you like this project, give it a ⭐ on GitHub!
+
