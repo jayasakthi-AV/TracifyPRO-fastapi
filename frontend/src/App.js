@@ -5,8 +5,9 @@ import TaglineSection from "./TaglineSection";
 import Analytics from "./Analytics";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://tracifypro-fastapi-uyy1.onrender.com",
 });
+
 
 function App() {
   const [products, setProducts] = useState([]);
